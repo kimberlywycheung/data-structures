@@ -1,5 +1,8 @@
 var Queue = function() {
-  var someInstance = {};
+  var instance = {
+    storage: {},
+    length: 0
+  };
 
   // Use an object with numeric keys to store values
   var storage = {};
@@ -31,5 +34,5 @@ var Queue = function() {
     return Object.keys(storage).length;
   };
 
-  return someInstance;
+  return instance;
 };
