@@ -15,7 +15,6 @@ var LinkedList = function() {
       list.tail.next = newNode;
     }
     // update list.tail to new Node
-    var keys = Object.keys(list);
     list.tail = newNode;
   };
 

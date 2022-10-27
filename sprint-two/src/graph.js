@@ -2,10 +2,22 @@
 
 // Instantiate a new graph
 var Graph = function() {
+  var graph = Object.create(Graph.prototype);
+  graph.nodes = [];
+  return graph;
+};
+
+var GraphNode = function (value) {
+  var node = {};
+  node.value = value;
+  node.neighbors = [];
+  return node;
 };
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
+  var newNode = Node(node);
+  this.nodes.push(newNode);
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
