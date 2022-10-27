@@ -1,16 +1,21 @@
 var Stack = function() {
   var instance = {
-    storage: []
+    storage: {},
+    length: 0
   };
 
   instance.push = function (value) {
-    instance.storage.push(value);
+    instance.storage[instance.length] = value;
+    instance.length++;
   };
   instance.pop = function() {
-    return instance.storage.pop();
+    var out = instance.storage[instance.length - 1];
+    instance.length = Math.max(instance.length - 1, 0);
+    delete instance.storage[instance.length];
+    return out;
   };
   instance.size = function() {
-    return instance.storage.length;
+    return instance.length;
   };
 
   return instance;
